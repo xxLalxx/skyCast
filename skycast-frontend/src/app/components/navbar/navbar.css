@@ -1,0 +1,142 @@
+/* Keep your existing navbar, left-group, brand, menu, and search styles exactly as they are */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  background-color: #1e293b;
+  color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, sans-serif;
+}
+
+.nav-left-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex: 1;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #38bdf8;
+}
+
+.nav-search {
+  width: 350px;
+}
+
+.search-box {
+  display: flex;
+  width:180%;
+  background-color: #334155;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #475569;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 1rem;
+  color: white;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #475569;
+}
+
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  min-width: 0;
+}
+
+.location-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #334155;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid #475569;
+  min-width: 0; 
+}
+
+.location-icon {
+  font-size: 1.1rem;
+}
+
+.location-text {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.city-name {
+  color: #ffffff;
+}
+
+.state-name {
+  color: #94a3b8; /* Muted gray tone for state to emphasize the city name */
+}
+
+/* Profile Icon Properties */
+.profile-placeholder {
+  display: flex;
+  align-items: center;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.avatar-mock {
+  width: 35px;
+  height: 35px;
+  background-color: #38bdf8;
+  color: #1e293b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}

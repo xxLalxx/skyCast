@@ -1,0 +1,12 @@
+/* Remove default browser spaces and make everything full-width */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #0f172a;
+}
+
+/* Ensure boxes calculate their sizes correctly */
+* {
+  box-sizing: border-box;
+}
