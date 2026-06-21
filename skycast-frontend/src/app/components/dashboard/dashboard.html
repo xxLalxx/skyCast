@@ -1,20 +1,24 @@
+@if (weatherData) {
 <div class="dashboard-container">
   
   <section class="current-weather-card">
     
     <div class="card-header">
       <div class="location-meta">
-        <h2>Kollam</h2>
-        <p class="weather-date">Sunday, 7:40 PM</p>
+        <h2>{{ currentPlace }}</h2>
+        <p class="weather-date">As of {{ weatherData.time }}</p>
       </div>
-      <div class="condition-badge">Mostly Sunny</div>
+      <div class="condition-badge">{{ weatherData.condition }}</div>
     </div>
 
     <div class="card-body">
       <div class="temp-display">
-        <span class="main-temp">36</span><span class="unit">°C</span>
+        <span class="main-temp">{{ weatherData.temperature | number:'1.0-0' }}</span>
+        <span class="unit">°C</span>
       </div>
-      <div class="weather-icon-large">☀️</div>
+      <div class="weather-icon-large">
+        {{ getWeatherIcon(weatherData.condition) }}
+      </div>
     </div>
 
     <div class="metrics-grid">
@@ -22,7 +26,7 @@
         <span class="metric-icon">💧</span>
         <div class="metric-info">
           <span class="metric-label">Humidity</span>
-          <span class="metric-value">64%</span>
+          <span class="metric-value">{{ weatherData.humidity }}%</span>
         </div>
       </div>
 
@@ -30,15 +34,15 @@
         <span class="metric-icon">💨</span>
         <div class="metric-info">
           <span class="metric-label">Wind Speed</span>
-          <span class="metric-value">12 km/h</span>
+          <span class="metric-value">{{ weatherData.windSpeed }} km/h</span>
         </div>
       </div>
 
       <div class="metric-item">
-        <span class="metric-icon">🌧️</span>
+        <span class="metric-icon">👁️</span>
         <div class="metric-info">
-          <span class="metric-label">Precipitation</span>
-          <span class="metric-value">10%</span>
+          <span class="metric-label">Visibility</span>
+          <span class="metric-value">{{ weatherData.visibility }} km</span>
         </div>
       </div>
     </div>
@@ -50,37 +54,27 @@
     
     <div class="forecast-grid">
       
-      <div class="forecast-card">
-        <span class="forecast-day">Tomorrow</span>
-        <span class="forecast-icon">🌦️</span>
-        <span class="forecast-condition">Light Rain</span>
-        <div class="forecast-temps">
-          <span class="temp-high">32°</span>
-          <span class="temp-low">25°</span>
+      @for (day of forecastData; track day.date) {
+        <div class="forecast-card">
+          <span class="forecast-day">{{ day.dayOfWeek }}</span>
+          
+          <img [src]="'https:' + day.iconCode" alt="Weather Icon" class="forecast-icon-img" style="width: 48px; height: 48px;" />
+          
+          <span class="forecast-condition">{{ day.condition }}</span>
+          
+          <div class="forecast-temps">
+            <span class="temp-high">{{ day.maxTemp | number:'1.0-0' }}°</span>
+            <span class="temp-low">{{ day.minTemp | number:'1.0-0' }}°</span>
+          </div>
         </div>
-      </div>
-
-      <div class="forecast-card">
-        <span class="forecast-day">Tue, Jun 9</span>
-        <span class="forecast-icon">☁️</span>
-        <span class="forecast-condition">Cloudy</span>
-        <div class="forecast-temps">
-          <span class="temp-high">30°</span>
-          <span class="temp-low">24°</span>
-        </div>
-      </div>
-
-      <div class="forecast-card">
-        <span class="forecast-day">Wed, Jun 10</span>
-        <span class="forecast-icon">☀️</span>
-        <span class="forecast-condition">Sunny</span>
-        <div class="forecast-temps">
-          <span class="temp-high">35°</span>
-          <span class="temp-low">26°</span>
-        </div>
-      </div>
+      }
 
     </div>
   </section>
   
 </div>
+} @else {
+<div class="loading-container" style="text-align: center; padding: 50px; color: #fff;">
+  <p>Localizing your real-time dashboard data...</p>
+</div>
+}
