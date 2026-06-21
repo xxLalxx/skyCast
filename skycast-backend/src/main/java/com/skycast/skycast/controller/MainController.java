@@ -3,6 +3,7 @@ package com.skycast.skycast.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import com.skycast.skycast.dto.DayForecast;
 import com.skycast.skycast.response.WeatherDetailsResponse;
 import com.skycast.skycast.service.WeatherService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/v1/api/weather")
 public class MainController {

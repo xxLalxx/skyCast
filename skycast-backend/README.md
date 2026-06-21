@@ -1,34 +1,43 @@
 # skyCast 🌦️
 
-A lightweight, efficient Spring Boot backend application designed to fetch, process, and deliver real-time weather information using modern reactive programming patterns.
+A real-time, responsive weather dashboard application built with a modern decoupled architecture: a high-performance Spring Boot backend paired with a reactive Angular single-page frontend.
 
 ---
 
-## 🚀 Current Status: Phase 2 Complete
-The core backend processing layers are now fully established. The application seamlessly interfaces with external weather microservices to fetch both immediate conditions and multi-day metrics, mapping raw JSON matrices into clean data transfer objects (DTOs).
+## 🚀 Current Status: Core Full-Stack Pipeline Complete
+The core end-to-end architecture is fully established. The application dynamically captures client-side browser coordinates, translates them into local location markers, and queries a custom Spring Boot API to fetch real-time weather analytics and 3-day forecasts—rendering everything dynamically.
 
 ### Key Features Implemented:
-* **Spring Boot Framework:** Foundation backend architecture set up.
-* **WebClient Integration:** Initialized Spring WebFlux's `WebClient` for non-blocking, reactive HTTP requests.
-* **Current Weather Endpoint:** Built the internal API architecture to capture and handle real-time weather datasets.
-* **3-Day Weather Forecast:** Added a multi-day forecast endpoint featuring custom nested JSON parsing utilities to map temperatures, environmental conditions, and precipitation probabilities.
+* **Reactive Spring Boot Backend:** Built structured endpoints for current metrics and forecasts using non-blocking programming patterns and clean DTO mapping structures.
+* **Angular Frontend Architecture:** Created a Standalone Component single-page interface featuring dark-mode dashboard metrics.
+* **Shared State Search Stream:** Implemented an RxJS-driven state stream allowing the top navbar to instantly broadcast manual searches and "Home" navigation actions straight to the data viewport.
+* **Geocoding & Dynamic Assets:** Connected client-side reverse-geocoding workflows and integrated external weather CDN graphics to display precise dynamic forecast summaries.
 
 ---
 
 ## 🛠️ Tech Stack
-* **Backend Framework:** Spring Boot 3.x
+
+### Backend Architecture
+* **Framework:** Spring Boot 3.x
 * **Language:** Java (JDK 17+)
 * **Networking:** Spring WebFlux (`WebClient`)
 * **Data Processing:** Stream API & Jackson Object Mapping
-* **IDE:** Eclipse IDE (with EGit)
+
+### Frontend Architecture
+* **Framework:** Angular 18+ (Standalone Components)
+* **Language:** TypeScript, HTML5, CSS3
+* **State Management:** RxJS (BehaviorSubjects & Subscriptions)
 
 ---
 
-## 📅 Roadmap / Next Steps
+## 📅 Roadmap / Current Status
 - [x] Phase 1: Initialize project architecture & implement Current Weather endpoint.
 - [x] Phase 2: Design and implement the **3-Day Weather Forecast** endpoint.
-- [ ] Phase 3: Add global error-handling, reactive fallback structures, and API key security wrappers.
-- [ ] Phase 4: Build out and connect front-end architecture.
+- [x] Phase 3: Build out standalone Angular frontend and design responsive dashboard UI layout.
+- [x] Phase 4: Wire end-to-end reactive communication (Navbar search tracking & Dashboard bindings).
+- [ ] Phase 5: Add global backend error-handling, API security wrappers, and user settings panel.
 
 ---
-*Developed as a side-project to explore reactive Spring microservices.*
+
+## 👤 Author
+Created with 💻 by **Adithyalal P**
